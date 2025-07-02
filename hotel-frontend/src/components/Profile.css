@@ -1,0 +1,152 @@
+/* Profile.css - Clean, responsive, grid layout with smooth design */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #1c1f3b, #050938);
+  color: white;
+  min-height: 100vh;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  min-height: 100vh;
+}
+
+.profile-card {
+  background-color: #1d1d2f;
+  border-radius: 14px;
+  padding: 2.5rem 3rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem 2.5rem;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Title spanning full width */
+.profile-card h2 {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Labels full width */
+.profile-card label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #ccc;
+  user-select: none;
+}
+
+/* Inputs, textarea, select styling */
+.profile-card input,
+.profile-card select,
+.profile-card textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: none;
+  background-color: #2c2f4d;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: vertical;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card input::placeholder,
+.profile-card textarea::placeholder {
+  color: #999;
+}
+
+.profile-card input:focus,
+.profile-card select:focus,
+.profile-card textarea:focus {
+  outline: none;
+  background-color: #3b3f6d;
+  box-shadow: 0 0 10px #667eea;
+}
+
+/* Textarea min height */
+.profile-card textarea {
+  min-height: 80px;
+}
+
+/* Email readonly input styling */
+.profile-card input[readonly] {
+  background-color: #444a7a;
+  cursor: not-allowed;
+  color: #bbb;
+}
+
+/* Buttons spanning full width */
+.profile-button {
+  grid-column: 1 / -1;
+  padding: 14px 0;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+/* Save button style */
+.profile-button.save {
+  background: linear-gradient(to right, #1c1f3b, #050938);
+  color: white;
+  background: linear-gradient(to right, #1c1f3b, #050938);
+}
+
+.profile-button.save:hover {
+  background: linear-gradient(to right, #1e2886, #050938);
+  background: linear-gradient(to right, #232c7d, #050938);
+}
+
+/* Logout button style */
+.profile-button.logout {
+  background: linear-gradient(135deg, #e94e77, #d64550);
+  color: white;
+  box-shadow: 0 6px 20px rgba(233, 78, 119, 0.6);
+}
+
+.profile-button.logout:hover {
+  background: linear-gradient(135deg, #d64550, #b0323f);
+  box-shadow: 0 8px 25px rgba(182, 50, 63, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .profile-card {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+  }
+  
+  .profile-button {
+    font-size: 1.05rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
