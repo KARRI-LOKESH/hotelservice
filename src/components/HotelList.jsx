@@ -206,7 +206,8 @@ const HotelList = () => {
           <p className="no-hotels">No hotels found.</p>
         ) : (
           hotels.map((hotel) => {
-            const imageUrl = `http://localhost:8081/${hotel.imageUrl.replace(/^\/+/, '')}`;
+            // Safely handle null or undefined imageUrl
+            const imageUrl = `http://localhost:8081/${(hotel.imageUrl || '').replace(/^\/+/, '')}`;
             return (
               <div className="hotel-card" key={hotel.id}>
                 {hotel.imageUrl && (
